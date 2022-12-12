@@ -42,7 +42,7 @@ class User(db.Model, UserMixin):
 
 
 class Video(db.Model):
-    #__tablename__ = 'videos'
+    # __tablename__ = 'videos'
     id = db.Column(db.Integer, primary_key=True)
     link = db.Column(db.String, unique=True, nullable=False)
 
@@ -57,7 +57,7 @@ class Video(db.Model):
 
 
 class Profile(db.Model):
-    #__tablename__ = 'profiles'
+    # __tablename__ = 'profiles'
     id = db.Column(db.Integer, primary_key=True)
     bio = db.Column(db.String, unique=False, nullable=True)
     email = db.Column(db.String, unique=True, nullable=True)
@@ -72,7 +72,7 @@ class Profile(db.Model):
 
 
 class Game(db.Model):
-    #__tablename__ = 'games'
+    # __tablename__ = 'games'
     id = db.Column(db.Integer, primary_key=True)
     icons = db.Column(db.String, unique=True, nullable=False)
 
@@ -120,6 +120,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
+        print(user)
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
@@ -152,6 +153,14 @@ def register():
 @login_required
 def dashboard():
     return render_template('dashboard.html')
+
+
+@app.route('/profile', methods=['GET', 'POST'])
+@login_required
+def profile():
+    username = current_user.username
+    user = User.query.filter_by(username=username).first()
+    return render_template('profile.html', user=user)
 
 
 if __name__ == "__main__":
