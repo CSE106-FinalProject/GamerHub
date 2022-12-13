@@ -4,25 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/profile.css" />
-    <title>Profile</title>
+    <title>Dashboard</title>
 </head>
+
 <body>
-    
-    <div class="profilePic">
-        <img src="{{url_for('static', filename='user_pics/' + user.image_file)}}" alt="Profile Picture" width="100" height="100"> 
-    </div>  
+    <h1>Profile</h1>
 
-    <div class="user">
-        <h1>Mary</h1> 
-    </div>
+    <h2> {{ profile.id }}</h2>
 
-    <div class="edit">   
-        <button class="editHighlights">Edit Highlights</button>
-    </div>
+    <h2> {{ user.username }}</h2>
 
-    <div class="highlightReel">
-        <img src="{{url_for('static', filename='user_pics/' + user.image_file)}}" alt="Highlight Reel" width="100" height="100">
-    </div>
+
+
 </body>
+
 </html>
