@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/profile.css">
+    <script src="../src/profile.js"></script>
     <title>Dashboard</title>
 </head>
 
 <body>
-    <h1>Profile</h1>
 
-    <h2> {{ profile.id }}</h2>
+    <a href="dashboard.html" class="previous">&#8249;</a>
 
-    <h2> {{ user.username }}</h2>
+    <div class="profilePage">
 
+        <h1>Profile</h1>
 
+        <h2> {{ profile.id }}</h2>
+
+        <h2> {{ user.username }}</h2>
+
+        <div>
+            <button class="editHighlights">Edit Highlights</button>
+        </div>
+
+        <img src="{{url_for('static', filename='user_pics/' + user.image_file)}}" alt="Highlight reel">
+    </div>
+
+    
 
 </body>
 

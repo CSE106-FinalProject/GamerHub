@@ -1,11 +1,30 @@
+body {
+    background-color: grey;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+    border-radius: 20%;    
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
 h1 {
+    padding: 10px;
+}
+
+.profilePage {
     text-align: center;
+    background-color: #525252;
+    height: 550px;
+    border-radius: 25px;
 }
 
 img {
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
+    padding: 2em;
+    align-content: center;
 }
 
 .edit {
@@ -14,7 +33,7 @@ img {
 }
 
 .editHighlights {
-    background-color: #4CAF50; /* Green */
+    background-color: #DE3163; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -26,11 +45,11 @@ img {
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    
+
 }
 
 .editHighlights:active {
-    background-color: darkgreen;
+    background-color: #800020;
 }
 
 .editHighlights:hover {
