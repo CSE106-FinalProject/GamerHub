@@ -169,8 +169,10 @@ def profile():
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    # need to get array of url links to pass down and have access to
-    return render_template('dashboard.html')
+    user = current_user.username
+    user_name = User.query.filter_by(username = user).first()
+
+    return render_template('dashboard.html', user = user_name)
 
 
 if __name__ == "__main__":
