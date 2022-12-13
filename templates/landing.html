@@ -5,28 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/home.css" />
+    <link rel="stylesheet" href="../static/landing.css" />
     <title>Home</title>
 </head>
 
 <body>
+    <header>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('login') }}" class="text">Login</a></li>
+            <li><a href="{{ url_for('register') }}" class="text">Sign Up</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <div class="words">
+        <h1>Find your Match.</h1>
+    </div>
 
 
-    <div class="master-container"> </div>
+    <div class="master-container">
     <div class="signup">
         <div class="signup-container">
-            <a href="{{ url_for('login') }}" class="text">Login Page</a><br>
+            <a href="{{ url_for('login') }}" class="text">Login</a><br>
         </div>
     </div>
+    <br>
 
     <div class="register">
         <div class="register-container">
-            <a href="{{ url_for('register') }}" class="text">Register Page</a><br>
+            <a href="{{ url_for('register') }}" class="text">Sign Up</a><br>
         </div>
     </div>
-    </div>
-
-
+    </div>  
 </body>
 
 </html>
