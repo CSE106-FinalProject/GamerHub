@@ -69,11 +69,14 @@ class Profile(db.Model):
 
     def __repr__(self):
         return '<Profile %r>' % self.gamer_tag
-    
+
     def newuserprofile(user):
-        profile = Profile(bio = None, email = None, phone_number = None, gamer_tag = None, user_id = user)
+        profile = Profile(bio=None, email=None,
+                          phone_number=None, gamer_tag=None, user_id=user)
         db.session.add(profile)
         db.session.commit()
+
+
 class Game(db.Model):
     #__tablename__ = 'games'
     id = db.Column(db.Integer, primary_key=True)
@@ -122,7 +125,7 @@ def home():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()        
+        user = User.query.filter_by(username=form.username.data).first()
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
@@ -151,21 +154,22 @@ def register():
 
     return render_template('register.html', form=form)
 
-@app.route('/profile', methods=['GET',]) #when a user click the profile icon
+
+@app.route('/profile', methods=['GET', ])  # when a user click the profile icon
 @login_required
 def profile():
     user = current_user.id
     user_username = current_user.username
-    user_profile = Profile.query.filter_by(user_id = user).first()
-    user_name = User.query.filter_by(username = user_username).first()
-    
-    return render_template('profile.html', profile = user_profile, user = user_name)
+    user_profile = Profile.query.filter_by(user_id=user).first()
+    user_name = User.query.filter_by(username=user_username).first()
+
+    return render_template('profile.html', profile=user_profile, user=user_name)
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    #need to get array of url links to pass down and have access to
+    # need to get array of url links to pass down and have access to
     return render_template('dashboard.html')
 
 
