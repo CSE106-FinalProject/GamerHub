@@ -151,7 +151,10 @@ def register():
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    return render_template('dashboard.html')
+    user = current_user.username
+    user_name = User.query.filter_by(username = user).first()
+
+    return render_template('dashboard.html', user = user_name)
 
 
 if __name__ == "__main__":

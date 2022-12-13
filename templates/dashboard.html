@@ -22,29 +22,13 @@
                 </i>
             </button>
         </div>
-    <img src="{{url_for('static', filename='user_pics/' + user.image_file)}}" alt="Profile Picture" width="100" height="100">
     </header>
     <br>
     <div class="container">
     <h2>My Posts</h2>
-    {% for post in posts %}
-    <h3>{{post.title}}</h3>
-    <p>{{post.content}}</p>
-    <p>{{post.date_posted}}</p>
-    {% endfor %}
     </div>
     <br>
-    <a href="{{url_for('new_post')}}">Create a new post</a>
-    <br>
-    <a href="{{url_for('account')}}">Account</a>
-    <br>
-    <a href="{{url_for('home')}}">Home</a>
-    <br>
-    <a href="{{url_for('about')}}">About</a>
-    <br>
-    <a href="{{url_for('contact')}}">Contact</a>
-    <br>
-    <a href="{{url_for('logout')}}">Press here to logout</a>
+    
 </body>
 
 </html>
