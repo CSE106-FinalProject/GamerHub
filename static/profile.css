@@ -1,3 +1,13 @@
+.logout {
+    background-color: lightblue;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-left: 87%;
+    height: 10px;
+    padding: 8px 16px;
+}
+
 body {
     height: 3000px;
     background: linear-gradient(400deg, #007BB8 0%, #00AFF0 70%, #CDF6FF 80%, white 90%);
@@ -7,13 +17,32 @@ body {
     height: 100px;
     width: 300px;
 }
+
 .container {
-    width: 40%;
+    width: 45%;
+    margin: 2%;
     float: left;
 }
 
+#bio {
+    border: black;
+    text-align: center;
+    padding: 5px;
+    background-color: #C5C5C5;  
+    height: 200px;
+    border-radius: 10px;
+}
+
+#info {
+    text-align: center;
+    padding: 5px;
+    background-color: #C5C5C5;  
+    height: 300px;
+    border-radius: 10px; 
+}
+
 .submit {
-    float: right;
+    margin: 5%;
 }
 
 .btn {
@@ -43,6 +72,10 @@ h1 {
     background-color: #525252;
     height: 550px;
     border-radius: 25px;
+}
+
+input {
+    border-radius: 10px;
 }
 
 img {
