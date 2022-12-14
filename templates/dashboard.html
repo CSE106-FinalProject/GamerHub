@@ -24,7 +24,8 @@
         </div>
 
         <div class="icon">
-            <img src="https://cdn.discordapp.com/attachments/1041461820973658202/1052537556681629696/Copy_of_Gamers.png" alt="">
+            <img src="https://cdn.discordapp.com/attachments/1041461820973658202/1052537556681629696/Copy_of_Gamers.png"
+                alt="">
         </div>
 
 
@@ -40,22 +41,22 @@
 
 
 
-<div class="main-container">
-    <div class="video-container-up">
-        <a href="{{url_for('upload')}}" class="button">Upload a Video</a>
-    </div>
+    <div class="main-container">
+        <div class="video-container-up">
+            <a href="{{url_for('upload')}}" class="button">Upload a Video</a>
+        </div>
 
-    <div class="video-container-up">
-        <a href="{{url_for('profile')}}" class="button">Profile Page</a>
+        <div class="video-container-up">
+            <a href="{{url_for('profile')}}" class="button">Profile Page</a>
 
+        </div>
     </div>
-</div>
     <br>
     <br>
     <br>
     <div></div>
 
-    
+
 
 
 
@@ -74,15 +75,15 @@
     <!-- create a loop to generate the cards -->
 
     <div class="flex-container">
-        
-        
-        {% for i in video_count %}
+
+
+
+        {% for i in finalvideo_list %}
+
         <div class="flex-item-left">
             <div class="card">
-                
-                
                 <br>
-                <h2><b>{{username_list}}</b></h2>
+                <h2><b>{{ (username_list[loop.index -1 ]) }}</b></h2>
 
                 <h2><b>{{i}}</b></h2>
                 <iframe width="560" height="315" src="{{i}}" title="YouTube video player" frameborder="0"
@@ -94,8 +95,10 @@
                 </div>
             </div>
         </div>
+
+
         {% endfor %}
-        
+
     </div>
     <a href="{{url_for('logout')}}" class="button">Press here to logout</a>
 
