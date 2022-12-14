@@ -42,7 +42,7 @@ class User(db.Model, UserMixin):
 
 
 class Video(db.Model):
-    #__tablename__ = 'videos'
+    # __tablename__ = 'videos'
     id = db.Column(db.Integer, primary_key=True)
     link = db.Column(db.String, unique=True, nullable=False)
 
@@ -62,7 +62,7 @@ class Video(db.Model):
 
 
 class Profile(db.Model):
-    #__tablename__ = 'profiles'
+    # __tablename__ = 'profiles'
     id = db.Column(db.Integer, primary_key=True)
     bio = db.Column(db.String, unique=False, nullable=True)
     email = db.Column(db.String, unique=True, nullable=True)
@@ -83,7 +83,7 @@ class Profile(db.Model):
 
 
 class Game(db.Model):
-    #__tablename__ = 'games'
+    # __tablename__ = 'games'
     id = db.Column(db.Integer, primary_key=True)
     icons = db.Column(db.String, unique=True, nullable=False)
 
@@ -160,27 +160,28 @@ def register():
     return render_template('register.html', form=form)
 
 
-@app.route('/profile', methods=['GET', 'POST'])  # when a user click the profile icon
+# when a user click the profile icon
+@app.route('/profile', methods=['GET', 'POST'])
 @login_required
 def profile():
     user = current_user.id
     user_username = current_user.username
     user_profile = Profile.query.filter_by(user_id=user).first()
     user_name = User.query.filter_by(username=user_username).first()
-    
+
     if request.method == 'POST':
         bio = request.form['bio']
         user_profile.bio = bio
-        
+
         email = request.form['email']
         user_profile.email = email
-        
+
         number = request.form['number']
         user_profile.phone_number = number
-        
+
         tag = request.form['tag']
         user_profile.gamer_tag = tag
-        
+
         db.session.commit()
         return render_template('profile.html', user=user_name, profile=user_profile)
 
@@ -193,6 +194,7 @@ def dashboard():
     user = current_user.username
     user_name = User.query.filter_by(username=user).first()
     video_list = Video.query.with_entities(Video.link).all()
+    gametag_list = Video.query.with_entities(Video.game_tag).all()
     user_list = Video.query.with_entities(Video.users_id).all()
     usernameid_list = []
     username_list = []
@@ -204,7 +206,14 @@ def dashboard():
         myname = User.query.filter_by(id=x).first()
         username_list.append(myname.username)
 
-    return render_template('dashboard.html', user=user_name, video_count=video_list, user_list=user_list, username_list=username_list)
+    gametagidlist = []
+
+    for item1 in gametag_list:
+        temp3 = str(item1).split(",")
+        temp4 = temp3[0].split("(")
+        gametagidlist.append(temp4[1])
+
+    return render_template('dashboard.html', user=user_name, video_count=video_list, user_list=user_list, username_list=username_list, gametagidlist=gametagidlist)
 
 
 @app.route('/upload', methods=['GET', 'POST'])
@@ -217,7 +226,7 @@ def upload():
         # user_name = User.query.filter_by(username=user).first()
         game = request.form['game']
         Video.newVideo(current_user.id, uploadURL, game)
-        
+
         return redirect(url_for("dashboard"))
     return render_template('videoUpload.html')
 
