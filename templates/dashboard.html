@@ -22,6 +22,14 @@
                 </i>
             </button>
         </div>
+
+
+        <div class="profile">
+        <a href="{{url_for('profile')}}">Profile Page</a>
+
+        </div>
+
+
     </header>
     <br>
     <div class="container">
@@ -29,13 +37,45 @@
     </div>
     <br>
 
-    <a href="{{url_for('logout')}}">Press here to logout</a>
+    
 
-    <a href="{{url_for('profile')}}">Profile Page</a>
+    
 
+    <div class="video-container-up">
     <a href="{{url_for('upload')}}">Upload a Video</a>
+</div>
 
     <h1> This is the URL: Thanks Jett! {{ uploadURL }}</h1>
+
+
+
+    {% set names = ["Rodrigo","Jatnael","Brandon","Tristin","Axel","Leo"] %}
+
+    {% set professions = ["Valorant","Minecraft","APEX","OW2","Fortnite","Call of Duty"] %}
+
+    {% set videos = ["https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ","https://www.youtube.com/embed/dQw4w9WgXcQ"] %}
+
+
+    {% set gamer = ["Rodlowkey","Jett","Palomitas","Thant","Hermana","Namor"] %}
+
+
+    <!-- create a loop to generate the cards -->
+
+    <div class="flex-container">
+        {% for i in range(6) %}
+        <div class="flex-item-left">
+            <div class="card">
+                <h4><b>{{names[i]}}</b></h4>
+                <iframe width="560" height="315" src="{{videos[i]}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="container">
+                <button class="button">{{professions[i]}}</button>
+                <p>GamerTag: {{gamer[i]}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{{url_for('logout')}}">Press here to logout</a>
 
 </body>
 
