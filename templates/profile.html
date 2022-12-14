@@ -11,21 +11,23 @@
 
 <header>
     <a href="{{url_for('dashboard')}}" class="previous">&#8249;</a>
+    <a href="{{url_for('logout')}}" class="logout">Logout &raquo;</a>
     <div class="user">
         <h1>{{user.username}}</h1>
     </div>
+    
 </header>
 
 <body>
 
 
     <form method="POST">
-        <div class="form-container"></div>
-        <div class="container">
+
+        <div id="bio" class="container">
             <h3>BIO</h3><input type="text" class="bio" id="txtField" name="bio" value="{{ profile.bio }}" required>
         </div>
 
-        <div class="container">
+        <div id="info" class="container">
             <h3>Email</h3>
             <input type="text" class="email" id="txtField" name="email" value="{{ profile.email }}" required>
 
@@ -37,11 +39,10 @@
         </div>
         <div class="submit">
             <input class="btn" type="submit" value="Confirm Changes">
-        </div>  
         </div>
     </form>
 
-    <a href="{{url_for('logout')}}">Logout</a>
+    
 
 </body>
 
