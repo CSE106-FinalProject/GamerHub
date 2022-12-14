@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
@@ -54,6 +54,11 @@ class Video(db.Model):
 
     def __repr__(self):
         return '<Videos %r>' % self.link
+
+    def newVideo(user, url):
+        video = Video(link=url, users_id=user, game_tag=None)
+        db.session.add(video)
+        db.session.commit()
 
 
 class Profile(db.Model):
@@ -170,9 +175,22 @@ def profile():
 @login_required
 def dashboard():
     user = current_user.username
-    user_name = User.query.filter_by(username = user).first()
+    user_name = User.query.filter_by(username=user).first()
+    return render_template('dashboard.html', user=user_name)
 
-    return render_template('dashboard.html', user = user_name)
+
+@app.route('/upload', methods=['GET', 'POST'])
+@login_required
+def upload():
+    print("in upload video endpoint")
+    if request.method == 'POST':
+        uploadURL = request.form['videoURL']
+        user = current_user.username
+        user_name = User.query.filter_by(username=user).first()
+        Video.newVideo(current_user.id, uploadURL)
+
+        return render_template('dashboard.html', user=user_name, uploadURL=uploadURL)
+    return render_template('videoUpload.html')
 
 
 if __name__ == "__main__":

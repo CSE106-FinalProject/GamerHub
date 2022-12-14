@@ -11,11 +11,11 @@
 
 <body>
     <header>
-    <h3>Hello {{user.username}}</h3>
-    
+        <h3>Hello {{user.username}}</h3>
+
         <div class="searchBox">
 
-            <input class="searchInput"type="text" name="" placeholder="Search">
+            <input class="searchInput" type="text" name="" placeholder="Search">
             <button class="searchButton" href="#">
                 <i class="material-icons">
                     search
@@ -25,13 +25,18 @@
     </header>
     <br>
     <div class="container">
-    <h2>My Posts</h2>
+        <h2>My Posts</h2>
     </div>
     <br>
-    
+
     <a href="{{url_for('logout')}}">Press here to logout</a>
 
     <a href="{{url_for('profile')}}">Profile Page</a>
+
+    <a href="{{url_for('upload')}}">Upload a Video</a>
+
+    <h1> This is the URL: Thanks Jett! {{ uploadURL }}</h1>
+
 </body>
 
 </html>
