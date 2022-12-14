@@ -6,22 +6,20 @@
 <!-- cloudinary upload widget -->
 
 <body>
-    <h1>This is it</h1>
-    <div class="parent-upload">
-        <button id="upload_widget" class="cloudinary-button">
-            Upload files
-        </button>
-    </div>
+    <div class="parent-container">
+        <h1 class="title">Upload your gaming video clips here!</h1>
+        <div class="parent-upload">
+            <button id="upload_widget" class="cloudinary-button">
+                Upload
+            </button>
+        </div>
 
-    <div class="myTest">
-
-
-        <button class="mainbtn" onclick="changeColor()"></button>
-        <form method="POST">
-            <input type="text" id="txtField" name="videoURL" value="blah">
-            <input type="submit" value="Submit">
-        </form>
-
+        <div class="fields">
+            <form method="POST">
+                <input class="text-field" type="hidden" id="txtField" name="videoURL">
+                <input class="submit-field" type="submit" value="Submit">
+            </form>
+        </div>
 
 
     </div>
@@ -36,10 +34,8 @@
             if (!error && result && result.event === "success") {
                 console.log('Done! Here is the image info: ', result.info.url);
                 document.getElementById('txtField').value = result.info.url;
-
             }
         })
-
         document.getElementById("upload_widget").addEventListener("click", function () {
             myWidget.open();
         }, false);
