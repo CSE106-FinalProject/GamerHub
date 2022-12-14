@@ -55,8 +55,8 @@ class Video(db.Model):
     def __repr__(self):
         return '<Videos %r>' % self.link
 
-    def newVideo(user, url):
-        video = Video(link=url, users_id=user, game_tag=None)
+    def newVideo(user, url, game):
+        video = Video(link=url, users_id=user, game_tag=game)
         db.session.add(video)
         db.session.commit()
 
@@ -187,9 +187,10 @@ def upload():
         uploadURL = request.form['videoURL']
         user = current_user.username
         user_name = User.query.filter_by(username=user).first()
-        Video.newVideo(current_user.id, uploadURL)
-
-        return render_template('dashboard.html', user=user_name, uploadURL=uploadURL)
+        game = request.form['game']
+        Video.newVideo(current_user.id, uploadURL, game)
+        
+        return redirect(url_for("dashboard"))
     return render_template('videoUpload.html')
 
 
