@@ -160,13 +160,29 @@ def register():
     return render_template('register.html', form=form)
 
 
-@app.route('/profile', methods=['GET'])  # when a user click the profile icon
+@app.route('/profile', methods=['GET', 'POST'])  # when a user click the profile icon
 @login_required
 def profile():
     user = current_user.id
     user_username = current_user.username
     user_profile = Profile.query.filter_by(user_id=user).first()
     user_name = User.query.filter_by(username=user_username).first()
+    
+    if request.method == 'POST':
+        bio = request.form['bio']
+        user_profile.bio = bio
+        
+        email = request.form['email']
+        user_profile.email = email
+        
+        number = request.form['number']
+        user_profile.phone_number = number
+        
+        tag = request.form['tag']
+        user_profile.gamer_tag = tag
+        
+        db.session.commit()
+        return render_template('profile.html', user=user_name, profile=user_profile)
 
     return render_template('profile.html', profile=user_profile, user=user_name)
 
