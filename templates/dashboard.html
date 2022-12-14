@@ -74,26 +74,27 @@
     <!-- create a loop to generate the cards -->
 
     <div class="flex-container">
-        {% for i in range(6) %}
+        
+        
+        {% for i in video_count %}
         <div class="flex-item-left">
             <div class="card">
-                <h2> List of videos {{video_count}}</h2>
+                
+                
                 <br>
-                <h2> List of user_ids for each {{user_list}}</h2>
-                <br>
-                <h2> List of users for each video {{username_list}}</h2>
-                <br>
-                <h4><b>{{names[i]}}</b></h4>
-                <iframe width="560" height="315" src="{{videos[i]}}" title="YouTube video player" frameborder="0"
+
+                <h2><b>{{i}}</b></h2>
+                <iframe width="560" height="315" src="{{i}}" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
                 <div class="container">
-                    <button class="button">{{professions[i]}}</button>
-                    <p>GamerTag: {{gamer[i]}}</p>
+                    <button class="button">placeholder</button>
+                    <p>GamerTag: placeholder</p>
                 </div>
             </div>
         </div>
         {% endfor %}
+        
     </div>
     <a href="{{url_for('logout')}}" class="button">Press here to logout</a>
 
