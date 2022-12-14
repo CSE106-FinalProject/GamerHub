@@ -23,10 +23,8 @@
             </button>
         </div>
 
-
-        <div class="profile">
-        <a href="{{url_for('profile')}}">Profile Page</a>
-
+        <div class="icon">
+            <img src="https://cdn.discordapp.com/attachments/1041461820973658202/1052537556681629696/Copy_of_Gamers.png" alt="">
         </div>
 
 
@@ -37,13 +35,18 @@
     </div>
     <br>
 
-    
 
-    
+
+
 
     <div class="video-container-up">
-    <a href="{{url_for('upload')}}">Upload a Video</a>
-</div>
+        <a href="{{url_for('upload')}}">Upload a Video</a>
+    </div>
+
+    <div class="video-container-up">
+        <a href="{{url_for('profile')}}">Profile Page</a>
+
+    </div>
 
     <h1> This is the URL: Thanks Jett! {{ uploadURL }}</h1>
 
@@ -53,7 +56,9 @@
 
     {% set professions = ["Valorant","Minecraft","APEX","OW2","Fortnite","Call of Duty"] %}
 
-    {% set videos = ["https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ","https://www.youtube.com/embed/dQw4w9WgXcQ"] %}
+    {% set videos = ["https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "https://www.youtube.com/embed/dQw4w9WgXcQ", "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "https://www.youtube.com/embed/dQw4w9WgXcQ","https://www.youtube.com/embed/dQw4w9WgXcQ"] %}
 
 
     {% set gamer = ["Rodlowkey","Jett","Palomitas","Thant","Hermana","Namor"] %}
@@ -66,10 +71,12 @@
         <div class="flex-item-left">
             <div class="card">
                 <h4><b>{{names[i]}}</b></h4>
-                <iframe width="560" height="315" src="{{videos[i]}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="{{videos[i]}}" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
                 <div class="container">
-                <button class="button">{{professions[i]}}</button>
-                <p>GamerTag: {{gamer[i]}}</p>
+                    <button class="button">{{professions[i]}}</button>
+                    <p>GamerTag: {{gamer[i]}}</p>
                 </div>
             </div>
         </div>
