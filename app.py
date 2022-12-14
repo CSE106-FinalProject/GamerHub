@@ -55,8 +55,8 @@ class Video(db.Model):
     def __repr__(self):
         return '<Videos %r>' % self.link
 
-    def newVideo(user, url):
-        video = Video(link=url, users_id=user, game_tag=None)
+    def newVideo(user, url, game):
+        video = Video(link=url, users_id=user, game_tag=game)
         db.session.add(video)
         db.session.commit()
 
@@ -192,7 +192,19 @@ def profile():
 def dashboard():
     user = current_user.username
     user_name = User.query.filter_by(username=user).first()
-    return render_template('dashboard.html', user=user_name)
+    video_list = Video.query.with_entities(Video.link).all()
+    user_list = Video.query.with_entities(Video.users_id).all()
+    usernameid_list = []
+    username_list = []
+    for item in user_list:
+        temp = str(item).split(",")
+        temp2 = temp[0].split("(")
+        usernameid_list.append(temp2[1])
+    for x in usernameid_list:
+        myname = User.query.filter_by(id=x).first()
+        username_list.append(myname.username)
+
+    return render_template('dashboard.html', user=user_name, video_count=video_list, user_list=user_list, username_list=username_list)
 
 
 @app.route('/upload', methods=['GET', 'POST'])
@@ -201,13 +213,14 @@ def upload():
     print("in upload video endpoint")
     if request.method == 'POST':
         uploadURL = request.form['videoURL']
-        user = current_user.username
-        user_name = User.query.filter_by(username=user).first()
-        Video.newVideo(current_user.id, uploadURL)
-
-        return render_template('dashboard.html', user=user_name, uploadURL=uploadURL)
+        # user = current_user.username
+        # user_name = User.query.filter_by(username=user).first()
+        game = request.form['game']
+        Video.newVideo(current_user.id, uploadURL, game)
+        
+        return redirect(url_for("dashboard"))
     return render_template('videoUpload.html')
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, )
