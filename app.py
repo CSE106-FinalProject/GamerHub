@@ -50,7 +50,7 @@ class Video(db.Model):
     users_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     # Many Videos to 1 game tag
-    game_tag = db.Column(db.Integer, db.ForeignKey('game.id'), nullable=False)
+    game_tag = db.Column(db.Integer, db.ForeignKey('game.id'), nullable=True)
 
     def __repr__(self):
         return '<Videos %r>' % self.link
@@ -155,7 +155,7 @@ def register():
     return render_template('register.html', form=form)
 
 
-@app.route('/profile', methods=['GET', ])  # when a user click the profile icon
+@app.route('/profile', methods=['GET'])  # when a user click the profile icon
 @login_required
 def profile():
     user = current_user.id

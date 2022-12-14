@@ -5,22 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/profile.css" />
+    <link rel="stylesheet" href="../static/profile.css">
     <title>Dashboard</title>
 </head>
 
-<body>
-    <div class = 'profile-card'>
-        <h1>Profile</h1>
-        <img src="../static/brandon.jpg">
+<header>
+    <a href="{{url_for('dashboard')}}" class="previous">&#8249;</a>
+    <div class="user">
+        <h3>{{user.username}}</h3>
     </div>
+</header>
 
+<body>
     <h2> {{ profile.id }}</h2>
-
-    <h2> {{ user.username }}</h2>
-
-
-
 </body>
 
 </html>
