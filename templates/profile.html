@@ -12,28 +12,37 @@
 <header>
     <a href="{{url_for('dashboard')}}" class="previous">&#8249;</a>
     <div class="user">
-        <h3>{{user.username}}</h3>
+        <h1>{{user.username}}</h1>
     </div>
 </header>
 
 <body>
-    <h2> {{ profile.id }}</h2>
+
 
     <form method="POST">
-        <h1>BIO</h1>
-        <input type="text" id="txtField" name="bio" value= "{{ profile.bio }}" required>
-    
-        <h1>Email</h1>
-        <input type="text" id="txtField" name="email" value= {{ profile.email }} required>
-    
-        <h1>Phone Number</h1>
-        <input type="text" id="txtField" name="number" value= {{ profile.phone_number }} required>
-    
-        <h1>Gamer Tag</h1>
-        <input type="text" id="txtField" name="tag" value= {{ profile.gamer_tag }} required>
-    
-        <input type="submit" value="Submit">
+        <div class="form-container"></div>
+        <div class="container">
+            <h3>BIO</h3><input type="text" class="bio" id="txtField" name="bio" value="{{ profile.bio }}" required>
+        </div>
+
+        <div class="container">
+            <h3>Email</h3>
+            <input type="text" class="email" id="txtField" name="email" value="{{ profile.email }}" required>
+
+            <h3>Phone Number</h3>
+            <input type="text" class="number" id="txtField" name="number" value="{{ profile.phone_number }}" required>
+
+            <h3>Gamer Tag</h3>
+            <input type="text" class="tag" id="txtField" name="tag" value="{{ profile.gamer_tag }}" required>
+        </div>
+        <div class="submit">
+            <input class="btn" type="submit" value="Confirm Changes">
+        </div>  
+        </div>
     </form>
+
+    <a href="{{url_for('logout')}}">Logout</a>
+
 </body>
 
 </html>
