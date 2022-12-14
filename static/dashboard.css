@@ -174,4 +174,8 @@ a.button {
 
   text-decoration: none;
   color: initial;
+  
+  /* center */
+  justify-content: center;
+  
 }

@@ -30,7 +30,7 @@
 
     </header>
 
-    
+
     <br>
     <div class="container">
         <h2>My Posts</h2>
@@ -40,7 +40,7 @@
 
 
 
-<div>
+<div class="main-container">
     <div class="video-container-up">
         <a href="{{url_for('upload')}}" class="button">Upload a Video</a>
     </div>
@@ -52,7 +52,8 @@
 </div>
     <br>
     <br>
-    <br
+    <br>
+    <div></div>
 
     
 
@@ -88,7 +89,7 @@
         </div>
         {% endfor %}
     </div>
-    <a href="{{url_for('logout')}}">Press here to logout</a>
+    <a href="{{url_for('logout')}}" class="button">Press here to logout</a>
 
 </body>
 
