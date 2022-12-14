@@ -3,7 +3,9 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Courier Prime", monospace;
-  background-color: #fdfdfe;
+  height: 3000px;
+  background: linear-gradient(200deg, #553C9A 0%, #005EB8 51%, #007AC4 75%, #0091BF 81%, #00A6B0 92%, #17B89F 100%);
+
 }
 .words {
   width: 100%;
@@ -17,7 +19,7 @@ body {
 .words h1{
   font-size: 70px;
   font-weight: 500;
-  color: #553c9a;
+  color: white;
   border-right: 4px solid #000;
   animation: cursor 1s infinite step-end, typing 15s infinite steps(16);
   white-space: nowrap;
@@ -25,7 +27,7 @@ body {
 }
 @keyframes cursor{
   0%, 100%{border-color: transparent;}
-  50%{border-color: #000;}
+  50%{border-color: white;}
 }
 
 @keyframes typing{
@@ -120,3 +122,93 @@ header li a {
     }
     
     
+.container{
+  position: relative;
+  width: 1200px;
+  height: 300px;
+  margin: 240px auto;
+}
+
+.container .box{
+  position: relative;
+  width: calc(400px - 30px);
+  height: calc(300px - 30px);
+  background: #000;
+  float: left;
+  margin: 15px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.container .box .icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 1;
+}
+
+.container .box:hover .icon{
+  top: 20px;
+  left: calc(50% - 40px);
+  width: 80;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.container .box .icon .fa{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 80px;
+  transition: 0.5s;
+  color: #fff;
+}
+
+.container .box:hover .icon .fa{
+  font-size: 40px;
+}
+
+.container .box .content{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px);
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: .5s;
+  opacity: 0;
+}
+
+.container .box:hover .content{
+  top: 100px;
+  opacity: 1;
+}
+
+.container .box .content h3{
+  margin: 0 0 10px;
+  padding: 0;
+  color: #fff;
+  font-size: 24px;
+}
+
+.container .box .content p{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.container .box:nth-child(1) .icon{
+  background: pink;
+}
+
+.container .box:nth-child(1){
+  background: orange;
+}
