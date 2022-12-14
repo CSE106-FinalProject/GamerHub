@@ -84,14 +84,12 @@
             <div class="card">
                 <br>
                 <h2><b>{{ (username_list[loop.index -1 ]) }}</b></h2>
-
-                <h2><b>{{i}}</b></h2>
                 <iframe width="560" height="315" src="{{i}}" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
                 <div class="container">
-                    <button class="button">placeholder</button>
-                    <p>GamerTag: placeholder</p>
+                    <button class="button">Valorant</button>
+                    <p>GamerTag: Hidden</p>
                 </div>
             </div>
         </div>
@@ -100,6 +98,7 @@
         {% endfor %}
 
     </div>
+    <br>
     <a href="{{url_for('logout')}}" class="button">Press here to logout</a>
 
 </body>

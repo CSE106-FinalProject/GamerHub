@@ -101,15 +101,13 @@ header h3 {
 }
 
 
-* {
-  box-sizing: border-box;
-}
 
 .flex-container {
-  display: flex;
+  display: auto;
   flex-direction: column;
   font-size: 10px;
   text-align: center;
+  margin: 20px;
 }
 
 .card {
@@ -175,7 +173,27 @@ a.button {
   text-decoration: none;
   color: initial;
   
-  /* center */
+  display: flex;
+  align-items: center;
   justify-content: center;
+  flex: auto;
   
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.main-container > div {
+  flex: 1 25%;
+  margin: 1px;
+  padding: 1px;
+  border: 1px solid black;
+  background-color: whitesmoke;
+
 }
