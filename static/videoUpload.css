@@ -1,6 +1,8 @@
 body {
   text-align: center;
   padding: 2px;
+  height: 3000px;
+  background: linear-gradient(400deg, #007BB8 0%, #00AFF0 70%, #CDF6FF 80%, white 90%);
 }
 
 .title {
@@ -20,4 +22,32 @@ body {
   align-items: center;
   margin-top: 10rem;
   margin-left: 42.7rem;
+}
+
+.parent-container {
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  border: 1px solid #000;
+
+  border-radius: 5px;
+
+  padding: 10px;
+
+  margin: 10px;
+
+  width: 50%;
+
+  height: 50%;
+
+  text-align: center;
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
 }
