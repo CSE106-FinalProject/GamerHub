@@ -207,13 +207,17 @@ def dashboard():
         username_list.append(myname.username)
 
     gametagidlist = []
-
     for item1 in gametag_list:
         temp3 = str(item1).split(",")
         temp4 = temp3[0].split("(")
         gametagidlist.append(temp4[1])
 
-    return render_template('dashboard.html', user=user_name, video_count=video_list, user_list=user_list, username_list=username_list, gametagidlist=gametagidlist)
+    finalvideo_list = []
+    for item2 in video_list:
+        temp5 = str(item2).split("'")
+        finalvideo_list.append(temp5[1])
+
+    return render_template('dashboard.html', user=user_name, finalvideo_list=finalvideo_list, user_list=user_list, username_list=username_list, gametagidlist=gametagidlist)
 
 
 @app.route('/upload', methods=['GET', 'POST'])
