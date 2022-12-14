@@ -1,0 +1,67 @@
+.login-wrapper {
+    z-index: 9999;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+button {
+    background-color: blue;
+}
+
+.loginCard {
+    background-color: #00AFF0;
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    border-radius: 5%;
+}
+
+.bg {
+    height: 100%;
+    width: 100%;
+    position:fixed;
+    display: block;
+    z-index: -1;
+    background-image: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    filter: blur(8px);
+}
+
+h2 {
+    padding: 10px;
+    color: aliceblue;
+}
+
+input {
+    width: 200px;
+    border-radius: 2em;
+}
+
+
+
+.input-group {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.submit-btn {
+    padding: 10px;
+}
+
+.signup {
+    text-align: center;
+}
