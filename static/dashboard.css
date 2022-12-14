@@ -4,16 +4,16 @@ header img {
 }
 body {
     height: 3000px;
-    background: linear-gradient(200deg, #553C9A 0%, #005EB8 51%, #007AC4 75%, #0091BF 81%, #00A6B0 92%, #17B89F 100%);
+    background: linear-gradient(400deg, #007BB8 0%, #00AFF0 70%, #CDF6FF 80%,white 90%);
   }
 
 
 main {
-    color: red;
+    color: white;
 }
 
 header {
-    background-color: #553c9a;
+    background-color: #00AFF0;
     position: fixed;
     top: 0;
     left: 0;
@@ -57,7 +57,7 @@ header h3 {
 }
 
 .searchBox:hover > .searchButton {
-  background: #553c9a;
+  background: #00AFF0;
   color : whitesmoke;
 }
 
