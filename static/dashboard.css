@@ -3,20 +3,17 @@ header img {
     margin-left: 40px;
 }
 body {
-    height: 125vh;
-    background-image: url('https://media.discordapp.net/attachments/763987077276499971/999230644506857532/IMG_3709.JPG?width=1708&height=1139');
-    background-size: cover;
-    font-family: sans-serif;
-    margin-top: 80px;
-    padding: 30px;
-}
+    height: 3000px;
+    background: linear-gradient(400deg, #007BB8 0%, #00AFF0 70%, #CDF6FF 80%,white 90%);
+  }
+
 
 main {
     color: white;
 }
 
 header {
-    background-color: white;
+    background-color: #00AFF0;
     position: fixed;
     top: 0;
     left: 0;
@@ -26,7 +23,21 @@ header {
     align-items: center;
     justify-content: space-between;
     flex: 1;
+    color: white;
+    box-shadow: 0 0 25px 0 black;
 }
+
+header h3 {
+    padding-left: 3pc;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 .searchBox {
     position: absolute;
@@ -46,8 +57,8 @@ header {
 }
 
 .searchBox:hover > .searchButton {
-  background: white;
-  color : #2f3640;
+  background: #00AFF0;
+  color : whitesmoke;
 }
 
 .searchButton {

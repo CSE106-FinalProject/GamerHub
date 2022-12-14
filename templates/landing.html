@@ -5,28 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/home.css" />
+    <link rel="stylesheet" href="../static/landing.css" />
     <title>Home</title>
 </head>
 
 <body>
+    <header>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('login') }}" class="text">Login</a></li>
+            <li><a href="{{ url_for('register') }}" class="text">Sign Up</a></li>
+                </ul>
+            </nav>
+    </header>
 
+    <div class="words">
+        <h1>Find your Match.</h1>
+    </div>
 
-    <div class="master-container"> </div>
-    <div class="signup">
-        <div class="signup-container">
-            <a href="{{ url_for('login') }}" class="text">Login Page</a><br>
+    <div class="boxes">
+        <h2> Supported games:</h2>
+    <div class="content">
+        <div class="content-item">
+          <img src="https://www.pinnacle.com/Cms_Data/Contents/Guest/Media/esports2017/Article-Images/Valorant/2020-What-is-Valorant/Esports-What-is-Valorant-Temp-Hero.jpg">
+          <a href="#">Valorant</a>
         </div>
-    </div>
-
-    <div class="register">
-        <div class="register-container">
-            <a href="{{ url_for('register') }}" class="text">Register Page</a><br>
+        <div class="content-item">
+          <img src="https://cdn.arstechnica.net/wp-content/uploads/2022/10/ow2-760x380.jpeg">
+          <a href="#">Overwatch 2</a>
         </div>
-    </div>
+        <div class="content-item">
+          <img src="https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/en_US/games/switch/m/minecraft-switch/hero">
+          <a href="#">Minecraft</a>
+        </div>
+        <div class="content-item">
+          <img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/apex-featured-image-16x9.jpg.adapt.crop191x100.1200w.jpg">
+          <a href="#">APEX Legends</a>
+        </div>
+        <div class="content-item">
+          <img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/mwii/MWII-000-ARTREVEAL-TOUT.jpg">
+          <a href="#">Call of Duty</a>
+        </div>
+        <div class="content-item">
+          <img src="https://assets1.ignimgs.com/2018/03/06/fortnite---button-1520296499714.jpg">
+          <a href="#">Fortnite</a>
+        </div>
+      </div>
     </div>
 
 
+
+
+
+
+    
+
+
+
+
+ 
 </body>
 
 </html>
