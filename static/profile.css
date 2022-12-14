@@ -1,5 +1,25 @@
+header {
+    background-color: #553c9a;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+    padding: 10px;
+    
+}
+
+.user{
+    padding: 10px;
+    justify-content: flex-start;
+    align-content: center;
+}
+
 body {
-    background-color: grey;
+    background-color: #553C9A;
 }
 
 .previous {
@@ -11,20 +31,31 @@ body {
     padding: 8px 16px;
 }
 
+.previous:active {
+    background-color: #EDEADE;
+}
+
+.previous:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 h1 {
-    padding: 10px;
+    padding: 10px;  
 }
 
 .profilePage {
+    padding-top: 80px;
+    background-color: #525252;  
+    height: 100%;
     text-align: center;
-    background-color: #525252;
-    height: 550px;
     border-radius: 25px;
+    background-image: linear-gradient(to bottom left, #E5BDF6, #D8DEDE)
 }
 
 img {
     padding: 2em;
     align-content: center;
+    border-radius: 50%;
 }
 
 .edit {

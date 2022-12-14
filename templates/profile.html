@@ -10,12 +10,18 @@
     <title>Dashboard</title>
 </head>
 
-<body>
-
+<header>
     <a href="dashboard.html" class="previous">&#8249;</a>
+    <div class="user">
+        <h3>{{user.username}}</h3>
+    </div>
+</header>
+
+<body>
 
     <div class="profilePage">
 
+        <img src="../static/axel.jfif" alt="">
         <h1>Profile</h1>
 
         <h2> {{ profile.id }}</h2>
@@ -29,7 +35,6 @@
         <img src="{{url_for('static', filename='user_pics/' + user.image_file)}}" alt="Highlight reel">
     </div>
 
-    
 
 </body>
 
