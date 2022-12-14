@@ -1,19 +1,23 @@
+body {
+  text-align: center;
+  padding: 2px;
+}
+
 .title {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
 }
 
 .parent-upload {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  padding: 10px;
 }
 
 .submit-field {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 10rem;
   margin-left: 42.7rem;
 }

@@ -77,6 +77,12 @@
         {% for i in range(6) %}
         <div class="flex-item-left">
             <div class="card">
+                <h2> List of videos {{video_count}}</h2>
+                <br>
+                <h2> List of user_ids for each {{user_list}}</h2>
+                <br>
+                <h2> List of users for each video {{username_list}}</h2>
+                <br>
                 <h4><b>{{names[i]}}</b></h4>
                 <iframe width="560" height="315" src="{{videos[i]}}" title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
