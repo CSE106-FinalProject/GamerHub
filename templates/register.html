@@ -10,36 +10,40 @@
 </head>
 
 <body>
+    <div class="bg"></div>
+
     <div class="login-wrapper">
 
         <form class="form" method="POST" action="">
 
-            <div class="ucm">
-                <img src="../static/ucm.png" alt="ucm" width="236" height="263">
+            <div class="loginCard">
+                <h2>Register</h2>
+                {{ form.hidden_tag() }}
+
+                <div class="input-group">
+                    {{ form.username }}
+                </div>
+
+                <div class="input-group">
+                    {{ form.password }}
+                </div>
+
+                <div class="submit-btn">
+                    {{ form.submit }}
+                </div>
+
+                <div class="login">
+                    <div class="login-container">
+                        <a href="{{ url_for('login') }}" class="text">Already have an account? Log In</a>
+                    </div>
+                </div>
             </div>
 
 
-            <h2>Register</h2>
-            {{ form.hidden_tag() }}
-
-            <div class="input-group">
-                {{ form.username }}
-            </div>
-
-            <div class="input-group">
-                {{ form.password }}
-            </div>
-
-            <div class="submit-btn">
-                {{ form.submit }}
-            </div>
         </form>
     </div>
 
-    <div class="login">
-        <div class="login-container">
-            <a href="{{ url_for('login') }}" class="text">Already have an account? Log In</a>
-        </div>
+    
 
 
 </body>
