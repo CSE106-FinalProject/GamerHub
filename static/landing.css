@@ -66,7 +66,7 @@ body {
 
 
 header {
-    background-color: #00AFF0;
+    background-color: whitesmoke;
     position: fixed;
     top: 0;
     left: 0;
@@ -86,20 +86,24 @@ header li {
 }
 
 header li a {
-    color: black;
+    color: #00AFF0  ;
     text-decoration: none;
 }
 
 header li a:hover {
-    color: white;
+    color: black;
 }
 
 header li a:active {
-    color: white;
+    color: black;
 }
 
 header li a {
     font-size: 20px;
+} 
+
+.icon {
+  margin-left: 850px;
 }
 
 
